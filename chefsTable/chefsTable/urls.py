@@ -21,4 +21,5 @@ from littleLemon import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view=views.home,name='home'),
+    path('menu/<int:menu_id>', view = views.menu_by_id, name = 'menu_by_id'),
 ]
