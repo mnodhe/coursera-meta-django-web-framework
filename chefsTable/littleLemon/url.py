@@ -8,5 +8,6 @@ urlpatterns = [
     path('menu/<int:menu_id>', view=views.menu_by_id, name='menu_by_id'),
     path('sayhello/', view=views.say_hello, name='say_hello'),
     path('index/', view=views.index, name='index'),
+    path('reqres/', view=views.reqres, name='reqres'),
     
 ]

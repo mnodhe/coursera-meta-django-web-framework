@@ -34,3 +34,24 @@ def index(request):
 <p>Request Method :{}</p></center> 
 '''.format(path, method)
     return HttpResponse(content)
+
+
+def reqres(req: HttpRequest):
+    path = req.path
+    scheme = req.scheme
+    method = req.method
+    address = req.META['REMOTE_ADDR']
+    user_agent = req.META['HTTP_USER_AGENT']
+    path_info = req.path_info
+    response = HttpResponse()
+    response.headers['Age'] = 20
+    msg = f"""<br>
+    <br>path : {path}
+    <br>scheme : {scheme}
+    <br>method : {method}
+    <br>address : {address}
+    <br>user_agent : {user_agent}
+    <br>path_info : {path_info}
+    <br>response : {response.headers}
+    """
+    return HttpResponse(msg, content_type='text/html', charset='utf-8')
