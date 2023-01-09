@@ -46,12 +46,12 @@ def reqres(req: HttpRequest):
     response = HttpResponse()
     response.headers['Age'] = 20
     msg = f"""<br>
-    <br>path : {path}
-    <br>scheme : {scheme}
-    <br>method : {method}
-    <br>address : {address}
-    <br>user_agent : {user_agent}
-    <br>path_info : {path_info}
-    <br>response : {response.headers}
+        <br>path : {path}
+        <br>scheme : {scheme}
+        <br>method : {method}
+        <br>address : {address}
+        <br>user_agent : {user_agent}
+        <br>path_info : {path_info}
+        <br>response : {response.headers}
     """
     return HttpResponse(msg, content_type='text/html', charset='utf-8')
