@@ -20,5 +20,7 @@ from littleLemon import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('littleLemon.url'))
+    path('', include('littleLemon.url')),
 ]
+
+handler404 = 'chefsTable.views.handler404'
