@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-# let's add menu category to learn foreign key
+# let's add menu category to learn foreign key (one to many)
 
 
 class MenuCategory(models.Model):
@@ -27,3 +27,14 @@ class Person(models.Model):
     person_age = models.IntegerField()
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+
+
+# let's add some customer
+
+class Customer(models.Model):
+    name = models.CharField(max_length=200)
+    reservation_day = models.CharField(max_length=20)
+    seats = models.IntegerField()
+
+    def __str__(self):
+        return self.name
