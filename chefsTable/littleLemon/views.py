@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse, HttpRequest
+from littleLemon.forms import LogForm
 from littleLemon.forms import InputForm
 
 
@@ -60,5 +61,15 @@ def reqres(req: HttpRequest):
 
 def form_view(req):
     form = InputForm()
+    context = {'form': form}
+    return render(req, 'form.html', context)
+
+
+def logform_view(req):
+    form = LogForm()
+    if req.method == 'POST':
+        form = LogForm(req.POST)
+        if form.is_valid():
+            form.save()
     context = {'form': form}
     return render(req, 'form.html', context)

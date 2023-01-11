@@ -10,5 +10,6 @@ urlpatterns = [
     path('index/', view=views.index, name='index'),
     path('reqres/', view=views.reqres, name='reqres'),
     path('form/', view=views.form_view, name='form_view'),
-    
+    path('logform/', view=views.logform_view, name='logform_view'),
+
 ]

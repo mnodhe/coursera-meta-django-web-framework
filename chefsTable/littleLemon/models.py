@@ -38,3 +38,11 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# let's create a Logger
+
+class Logger(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    time_log = models.TimeField(help_text="Enter the exact time!")

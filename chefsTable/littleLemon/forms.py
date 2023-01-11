@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import NumberInput
-
+from .models import Logger
 
 SHIFTS = [
     {'1', 'Morning'},
@@ -16,3 +16,10 @@ class InputForm(forms.Form):
     time_log = forms.TimeField(help_text="Enter the exact time")
     # reservation_date = forms.CharField(
     #     widget=NumberInput(attrs={'type': 'date'}))
+
+
+class LogForm(forms.ModelForm):
+
+    class Meta:
+        model = Logger
+        fields = '__all__'
