@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse, HttpRequest
+from littleLemon.forms import InputForm
 
 
 def home(req):
@@ -55,3 +56,9 @@ def reqres(req: HttpRequest):
         <br>response : {response.headers}
     """
     return HttpResponse(msg, content_type='text/html', charset='utf-8')
+
+
+def form_view(req):
+    form = InputForm()
+    context = {'form': form}
+    return render(req, 'form.html', context)

@@ -24,3 +24,4 @@ urlpatterns = [
 ]
 
 handler404 = 'chefsTable.views.handler404'
+handler500 = 'chefsTable.views.handler500'
